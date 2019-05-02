@@ -664,6 +664,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WaterBasicNightime
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6b436d069d11415d1100ab9b44295342, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6b436d069d11415d1100ab9b44295342, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.9913635
@@ -901,8 +905,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: 0.010317844, y: 0.9656499, z: 0.038801994, w: -0.2567261}
-  m_LocalPosition: {x: 192.266, y: 41.351, z: 303.693}
+  m_LocalRotation: {x: 0.13600439, y: -0.8621039, z: 0.31308556, w: 0.3745091}
+  m_LocalPosition: {x: 186.20584, y: 44.03541, z: 309.73178}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

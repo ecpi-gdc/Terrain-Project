@@ -22,6 +22,7 @@ public class LevelCycle : MonoBehaviour {
 	void Awake() {
 		if (instance != null)
 			Destroy(this);
+		instance = this;
 		DontDestroyOnLoad(gameObject);
 	}
 

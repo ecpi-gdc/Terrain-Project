@@ -6,6 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/Start.unity
+    guid: 53ab492f735cf234ea3c2237a3d38f4d
+  - enabled: 1
+    path: Assets/Scenes/AnthonyTerrain.unity
+    guid: 3e643969ad5c8484caaa377b4823d044
+  - enabled: 1
+    path: Assets/Scenes/AshTerrain.unity
+    guid: 654091c12a2bded4788979780a6e942d
+  - enabled: 1
+    path: Assets/Scenes/Frank Terrain.unity
+    guid: 6a84b66771fb4734fa4061804ed0f94d
+  - enabled: 1
+    path: Assets/Scenes/John Terrain.unity
+    guid: 81bc024c70e437d4ca8a36099fcbfc7e
+  - enabled: 1
+    path: Assets/Scenes/Justin Boj.unity
+    guid: fe1a85d3ec3369040b7251780105f5d3
+  - enabled: 1
+    path: Assets/Scenes/Michael.unity
+    guid: f323c445e23ea13498eb60fac6170647
   m_configObjects: {}

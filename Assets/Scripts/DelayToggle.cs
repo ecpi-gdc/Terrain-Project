@@ -6,9 +6,23 @@ public class DelayToggle : MonoBehaviour {
 	[Tooltip("How long the object stays off for.")]
 	public float offDuration = 1f;
 
-	internal float lastUpdate;
+	public float LastUpdate { get; private set; }
+	public bool Active { get; private set; }
 
 	void Start() {
-		lastUpdate = Time.time;
+		SetActive(true);
+	}
+
+	public void SetActive(bool active) {
+		var ps = GetComponent<ParticleSystem>();
+		if (active) {
+			ps.Play(true);
+		}
+		else {
+			ps.Stop(true);
+		}
+
+		LastUpdate = Time.time;
+		Active = active;
 	}
 }

@@ -20,13 +20,11 @@ public class DelayToggleController : MonoBehaviour {
 	void Update() {
 		float t = Time.time;
 		foreach (var obj in toggles) {
-			if (obj.gameObject.activeSelf && t >= obj.lastUpdate + obj.onDuration) {
-				obj.gameObject.SetActive(false);
-				obj.lastUpdate = t;
+			if (!obj.Active && t >= obj.LastUpdate + obj.offDuration) {
+				obj.SetActive(true);
 			}
-			else if (!obj.gameObject.activeSelf && t >= obj.lastUpdate + obj.offDuration) {
-				obj.gameObject.SetActive(true);
-				obj.lastUpdate = t;
+			else if (obj.Active && t >= obj.LastUpdate + obj.onDuration) {
+				obj.SetActive(false);
 			}
 		}
 	}

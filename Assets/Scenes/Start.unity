@@ -143,19 +143,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scenes:
   - {fileID: 102900000, guid: 3e643969ad5c8484caaa377b4823d044, type: 3}
-  - {fileID: 102900000, guid: 654091c12a2bded4788979780a6e942d, type: 3}
+  - {fileID: 102900000, guid: 8efc3219aa496b04fadc822d2342c7fa, type: 3}
   - {fileID: 102900000, guid: 81bc024c70e437d4ca8a36099fcbfc7e, type: 3}
   - {fileID: 102900000, guid: fe1a85d3ec3369040b7251780105f5d3, type: 3}
   - {fileID: 102900000, guid: f323c445e23ea13498eb60fac6170647, type: 3}
   - {fileID: 102900000, guid: 6a84b66771fb4734fa4061804ed0f94d, type: 3}
   scenePaths:
   - Assets/Scenes/AnthonyTerrain.unity
-  - Assets/Scenes/AshTerrain.unity
+  - Assets/AshtonTerrain/AshtonTerrain.unity
   - Assets/Scenes/John Terrain.unity
   - Assets/Scenes/Justin Boj.unity
   - Assets/Scenes/Michael.unity
   - Assets/Scenes/Frank Terrain.unity
-  sceneDuration: 5
+  sceneDuration: 30
 --- !u!4 &1260274556
 Transform:
   m_ObjectHideFlags: 0

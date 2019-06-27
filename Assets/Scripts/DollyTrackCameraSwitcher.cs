@@ -15,8 +15,6 @@ public class DollyTrackCameraSwitcher : MonoBehaviour {
 		public float switchPercent;
 
 		[NonSerialized]
-		public float switchDistance;
-		[NonSerialized]
 		public bool hit = false;
 	}
 
@@ -26,8 +24,12 @@ public class DollyTrackCameraSwitcher : MonoBehaviour {
 	private CinemachineVirtualCameraBase initialActive = null;
 	[SerializeField]
 	private SwitchDefinition[] definitions;
+	
+	#if UNITY_EDITOR
+	[SerializeField]
+	private bool followMarkerGizmo = true;
+#endif
 
-	private float trackLength;
 	private CinemachineVirtualCameraBase activeCam;
 
 	void Awake() {
@@ -39,19 +41,7 @@ public class DollyTrackCameraSwitcher : MonoBehaviour {
 			SetActive(initialActive);
 	}
 
-	private void SetActive(CinemachineVirtualCameraBase vcam) {
-		if (activeCam != null)
-			activeCam.enabled = false;
-
-		vcam.enabled = true;
-		activeCam = vcam;
-	}
-
 	void Start() {
-		trackLength = dollyCart.m_Path.PathLength;
-
-		foreach (SwitchDefinition def in definitions)
-			def.switchDistance = def.switchPercent * trackLength;
 		ResetHit();
 	}
 
@@ -65,6 +55,14 @@ public class DollyTrackCameraSwitcher : MonoBehaviour {
 		}
 	}
 
+	private void SetActive(CinemachineVirtualCameraBase vcam) {
+		if (activeCam != null)
+			activeCam.enabled = false;
+
+		vcam.enabled = true;
+		activeCam = vcam;
+	}
+
 	private void ResetHit() {
 		foreach (SwitchDefinition def in definitions)
 			def.hit = false;
@@ -73,16 +71,24 @@ public class DollyTrackCameraSwitcher : MonoBehaviour {
 	private bool HitTrigger(SwitchDefinition def) {
 		if (def.hit) return false;
 		bool forward = dollyCart.m_Speed > 0;
-		float d = dollyCart.m_Position;
-		return forward ? d > def.switchDistance : d < def.switchDistance;
+		float pos = dollyCart.m_Position;
+		float dist = def.switchPercent * dollyCart.m_Path.PathLength;
+		return forward ? pos > dist : pos < dist;
 	}
-/*
+
+	private Vector3 GetPosition(float percent) {
+		var path = dollyCart.m_Path;
+		return path.EvaluatePosition(path.ToNativePathUnits(percent * path.PathLength,
+			CinemachinePathBase.PositionUnits.Distance));
+	}
+
+//*
 #if UNITY_EDITOR
 	void OnDrawGizmosSelected() {
 		Gizmos.color = Color.cyan;
-		var path = dollyCart.m_Path;
-		for (int i = 0; i < definitions.Length; i++) {
-			Vector3 pos = path.EvaluatePosition(definitions[ i ].switchPercent * path.MaxPos);
+
+		foreach (SwitchDefinition def in definitions) {
+			Vector3 pos = GetPosition(def.switchPercent);
 			Gizmos.DrawSphere(pos, 0.5f);
 		}
 	}
@@ -92,7 +98,7 @@ public class DollyTrackCameraSwitcher : MonoBehaviour {
 		public override void OnGUI(Rect position, SerializedProperty property, GUIContent label) {
 			var vcamProp = property.FindPropertyRelative("targetCam");
 			var percentProp = property.FindPropertyRelative("switchPercent");
-			var path = (property.serializedObject.targetObject as DollyTrackCameraSwitcher)?.dollyCart.m_Path;
+			var comp = property.serializedObject.targetObject as DollyTrackCameraSwitcher;
 
 			Rect r = new Rect(position) { height = EditorGUIUtility.singleLineHeight };
 
@@ -105,8 +111,8 @@ public class DollyTrackCameraSwitcher : MonoBehaviour {
 
 			using (var check = new EditorGUI.ChangeCheckScope()) {
 				EditorGUI.PropertyField(r, percentProp);
-				if (check.changed && path != null) {
-					SceneView.lastActiveSceneView.pivot = path.EvaluatePosition(percentProp.floatValue * path.MaxPos);
+				if (comp != null && comp.followMarkerGizmo && check.changed) {
+					SceneView.lastActiveSceneView.pivot = comp.GetPosition(percentProp.floatValue);
 					SceneView.lastActiveSceneView.size = 5f;
 					SceneView.lastActiveSceneView.Repaint();
 				}
@@ -121,6 +127,6 @@ public class DollyTrackCameraSwitcher : MonoBehaviour {
 	}
 
 #endif
-*/
+//*/
 
 }

@@ -74,13 +74,13 @@ MonoBehaviour:
     value: 0
   colorFilter:
     overrideState: 1
-    value: {r: 1, g: 1, b: 1, a: 1}
+    value: {r: 0.8962264, g: 0.85900956, b: 0.6975347, a: 1}
   hueShift:
     overrideState: 1
     value: 0
   saturation:
     overrideState: 1
-    value: 0
+    value: 27.5
   brightness:
     overrideState: 1
     value: 0
@@ -89,7 +89,7 @@ MonoBehaviour:
     value: 1
   contrast:
     overrideState: 1
-    value: 0
+    value: 35.8
   mixerRedOutRedIn:
     overrideState: 1
     value: 100
@@ -1338,7 +1338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1cb7e9e120078f43bce4f0b1be547a7, type: 3}
   m_Name: AmbientOcclusion
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -1347,12 +1347,12 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 0
+    value: 4
   color:
     overrideState: 1
     value: {r: 0, g: 0, b: 0, a: 1}
   ambientOnly:
-    overrideState: 1
+    overrideState: 0
     value: 0
   noiseFilterTolerance:
     overrideState: 1
@@ -1365,7 +1365,7 @@ MonoBehaviour:
     value: -12
   thicknessModifier:
     overrideState: 1
-    value: 1
+    value: 4.46
   directLightingStrength:
     overrideState: 1
     value: 0
@@ -1374,4 +1374,4 @@ MonoBehaviour:
     value: 0.25
   quality:
     overrideState: 1
-    value: 2
+    value: 4

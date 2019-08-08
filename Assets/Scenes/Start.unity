@@ -155,7 +155,7 @@ MonoBehaviour:
   - Assets/Scenes/Justin Boj.unity
   - Assets/Scenes/Michael.unity
   - Assets/Scenes/Frank Terrain.unity
-  sceneDuration: 30
+  sceneDuration: 360
 --- !u!4 &1260274556
 Transform:
   m_ObjectHideFlags: 0

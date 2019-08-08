@@ -503,7 +503,7 @@ MonoBehaviour:
   subpixelMorphologicalAntialiasing:
     quality: 2
   fastApproximateAntialiasing:
-    fastMode: 0
+    fastMode: 1
     keepAlpha: 0
   fog:
     enabled: 1
@@ -1500,8 +1500,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 658836750}
-  m_LocalRotation: {x: -0.025324272, y: 0.9483868, z: 0.07843055, w: 0.30621868}
-  m_LocalPosition: {x: -78.343475, y: -5.550991, z: 42.04564}
+  m_LocalRotation: {x: 0.010782372, y: 0.9670051, z: 0.041515045, w: -0.25112042}
+  m_LocalPosition: {x: -32.999374, y: -34.55311, z: 166.95898}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 172675944}
@@ -1788,7 +1788,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 958827857}
-  m_LocalRotation: {x: 0.013331979, y: -0.25095412, z: 0.0034566852, w: 0.96790105}
+  m_LocalRotation: {x: 0.013331996, y: -0.25095415, z: 0.00345669, w: 0.96790105}
   m_LocalPosition: {x: 6.1811676, y: 1.5844145, z: -12.104057}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

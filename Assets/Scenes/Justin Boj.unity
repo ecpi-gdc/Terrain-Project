@@ -1971,7 +1971,7 @@ MonoBehaviour:
     stationaryBlending: 0.95
     motionBlending: 0.85
   subpixelMorphologicalAntialiasing:
-    quality: 2
+    quality: 1
   fastApproximateAntialiasing:
     fastMode: 0
     keepAlpha: 0
@@ -2507,8 +2507,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1581774849}
-  m_LocalRotation: {x: -0.025324272, y: 0.9483868, z: 0.07843055, w: 0.30621868}
-  m_LocalPosition: {x: 150.05574, y: 3.377308, z: 187.23637}
+  m_LocalRotation: {x: 0.012796764, y: 0.81973445, z: 0.018329218, w: -0.57230735}
+  m_LocalPosition: {x: 435.27966, y: -8.753834, z: 224.8885}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
